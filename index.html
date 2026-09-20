@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HubSpot Module Builder — design custom modules visually, export ready to upload</title>
+<meta name="description" content="Build HubSpot custom modules by drag & drop. Real fields, live preview, responsive styles — save straight to your hs watch folder.">
+<link rel="icon" href="assets/icon128.png">
+<style>
+  :root { --bg:#0b0b16; --bg2:#12122a; --surface:#1a1a2e; --text:#e8e8f6; --muted:#a3a3cc; --accent:#FF7A59; --border:rgba(255,255,255,.1); }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.65 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+  a { color:var(--accent); }
+  .wrap { max-width:1040px; margin:0 auto; padding:0 24px; }
+  nav { border-bottom:1px solid var(--border); background:rgba(26,26,46,.7); backdrop-filter:blur(8px); position:sticky; top:0; z-index:5; }
+  nav .wrap { display:flex; align-items:center; justify-content:space-between; height:60px; }
+  .brand { display:flex; align-items:center; gap:10px; font-weight:700; color:var(--text); text-decoration:none; }
+  .brand img { width:30px; height:30px; border-radius:8px; }
+  nav .links a { color:var(--muted); text-decoration:none; margin-left:22px; font-size:14px; }
+  .hero { padding:72px 0 40px; text-align:center; background:radial-gradient(60% 80% at 50% 0%, #2a2040 0%, transparent 70%); }
+  .hero h1 { font-size:clamp(34px,6vw,56px); line-height:1.08; letter-spacing:-1.5px; margin:0 0 16px; }
+  .hero h1 em { font-style:normal; color:var(--accent); }
+  .hero p { font-size:19px; color:var(--muted); max-width:640px; margin:0 auto 28px; }
+  .cta { display:inline-block; background:var(--accent); color:#fff; font-weight:700; padding:13px 26px; border-radius:9px; text-decoration:none; }
+  .cta.ghost { background:transparent; border:1px solid var(--border); color:var(--text); margin-left:10px; }
+  .cta.soon { background:transparent; border:1px dashed rgba(255,122,89,.6); color:#ffb29e; cursor:default; }
+  .note { margin-top:14px; font-size:13px; color:var(--muted); }
+  .shot { margin:40px auto 0; max-width:960px; border:1px solid var(--border); border-radius:14px; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,.6); }
+  .shot img { display:block; width:100%; }
+  section { padding:56px 0; }
+  h2 { font-size:30px; letter-spacing:-.6px; margin:0 0 8px; text-align:center; }
+  .sub { text-align:center; color:var(--muted); max-width:620px; margin:0 auto 34px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; }
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:22px; }
+  .card h3 { margin:0 0 6px; font-size:17px; } .card p { margin:0; color:var(--muted); font-size:15px; }
+  .shots { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px; }
+  .shots figure { margin:0; } .shots img { width:100%; border-radius:10px; border:1px solid var(--border); display:block; }
+  .shots figcaption { color:var(--muted); font-size:14px; margin-top:8px; }
+  .plans { max-width:760px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; }
+  .plan.pro { border-color:rgba(255,122,89,.5); }
+  .plan ul { padding-left:18px; color:var(--muted); font-size:15px; } .price { font-size:30px; font-weight:800; margin:4px 0 8px; }
+  footer { border-top:1px solid var(--border); padding:30px 0; text-align:center; color:var(--muted); font-size:13px; }
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="./"><img src="assets/icon128.png" alt="">HubSpot Module Builder</a>
+  <div class="links"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="privacy.html">Privacy</a></div>
+</div></nav>
+
+<div class="hero"><div class="wrap">
+  <h1>Build <em>HubSpot</em> modules<br>visually</h1>
+  <p>Drag & drop your design. Get real fields, HubL and CSS — saved straight into the folder <code>hs watch</code> is watching.</p>
+  <!-- TODO: once the Chrome Web Store listing is live, turn this into <a class="cta" href="STORE_URL">Add to Chrome</a> -->
+  <span class="cta soon">Chrome Web Store — coming soon</span>
+  <a class="cta ghost" href="#features">See what it does</a>
+  <div class="note">Chrome 102+ on desktop · free to use · Pro from $49/year</div>
+  <div class="shot"><img src="assets/screenshot-1.jpg" alt="The builder: a hero section on the canvas with its fields in the side panel"></div>
+</div></div>
+
+<section id="features"><div class="wrap">
+  <h2>Everything a module needs</h2>
+  <p class="sub">Design once. The extension writes module.html, fields.json, meta.json, module.css and module.js for you.</p>
+  <div class="grid">
+    <div class="card"><h3>📁 Save into your watch folder</h3><p>Pick your project's modules folder once. Every export writes <code>name.module/</code> there and <code>hs watch</code> uploads it. Or download a ZIP.</p></div>
+    <div class="card"><h3>🧩 Real HubSpot fields</h3><p>Text, rich text, image, link, boolean, choice, number, color, groups and repeaters — generated with proper types and defaults.</p></div>
+    <div class="card"><h3>📱 Responsive styles editors can change</h3><p>Desktop and mobile padding plus theme colors on a Styles tab, written to <code>module.css</code> and a scoped <code>require_css</code> block.</p></div>
+    <div class="card"><h3>👀 Live preview</h3><p>Rendered from your generated files at desktop, tablet and mobile widths — what you see is what you export.</p></div>
+    <div class="card"><h3>✨ 30 ready-made sections</h3><p>Hero, pricing, FAQ, slider, tabs, team, timeline, data table, cookie banner and more — each with the fields it needs. Hero and FAQ are free.</p></div>
+    <div class="card"><h3>✅ Catches upload errors early</h3><p>A built-in checker flags reserved field names, nested repeaters and duplicate ids before HubSpot rejects them.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>See it working</h2>
+  <p class="sub">Real screenshots of the extension.</p>
+  <div class="shots">
+    <figure><img src="assets/screenshot-2.jpg" alt="Generated fields.json"><figcaption>Real HubSpot fields, generated for you</figcaption></figure>
+    <figure><img src="assets/screenshot-3.jpg" alt="Mobile live preview"><figcaption>Live preview at every width</figcaption></figure>
+    <figure><img src="assets/screenshot-4.jpg" alt="Padding and color controls"><figcaption>Desktop & mobile padding, theme colors</figcaption></figure>
+    <figure><img src="assets/screenshot-5.jpg" alt="Export dialog"><figcaption>Save straight into your hs watch folder</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="pricing"><div class="wrap">
+  <h2>Free to build. Pro for the full library.</h2>
+  <p class="sub">Pro is billed and licensed through Lemon Squeezy. Cancel anytime — Pro stays active until your paid period ends.</p>
+  <div class="plans">
+    <div class="card plan"><h3>Free</h3><div class="price">$0</div>
+      <ul><li>Full builder and live preview</li><li>Folder and ZIP export</li><li>All basic elements and field types</li><li>Hero and FAQ sections</li></ul></div>
+    <div class="card plan pro"><h3>Pro</h3><div class="price">$49<span style="font-size:15px;font-weight:600;color:var(--muted)">/year</span></div>
+      <ul><li>Everything in Free</li><li>All 30 sections</li><li>Video, Form and CTA elements</li><li>New sections and updates while subscribed</li></ul>
+      <a class="cta" style="margin-top:8px" href="https://extension-helper.lemonsqueezy.com/checkout/buy/c9a9e2b4-d7d1-4185-abfd-934f29e1552d">Get Pro</a></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  HubSpot Module Builder is an independent tool and is not affiliated with, endorsed by, or sponsored by HubSpot, Inc. HubSpot is a trademark of HubSpot, Inc.<br>
+  <a href="privacy.html">Privacy policy</a>
+</div></footer>
+</body>
+</html>

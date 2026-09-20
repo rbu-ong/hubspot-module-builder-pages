@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — HubSpot Module Builder</title>
+<link rel="icon" href="assets/icon128.png">
+<style>
+  :root { --bg:#0f0f1a; --surface:#1a1a2e; --text:#e0e0f0; --muted:#9a9ac0; --accent:#FF7A59; --border:rgba(255,255,255,.1); }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.7 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+  header { border-bottom:1px solid var(--border); background:var(--surface); }
+  header div { max-width:760px; margin:0 auto; padding:16px 24px; display:flex; align-items:center; gap:12px; }
+  header img { width:32px; height:32px; border-radius:8px; } header a { color:var(--text); font-weight:700; text-decoration:none; }
+  main { max-width:760px; margin:0 auto; padding:32px 24px 80px; }
+  h1 { font-size:32px; letter-spacing:-.5px; margin:0 0 4px; } h2 { font-size:21px; margin:36px 0 8px; } h3 { font-size:17px; }
+  p, li { color:#c9c9e6; } em { color:var(--muted); }
+  a { color:var(--accent); } code { background:var(--surface); padding:2px 6px; border-radius:4px; font-size:.9em; }
+  hr { border:0; border-top:1px solid var(--border); margin:32px 0; }
+  footer { text-align:center; color:var(--muted); font-size:13px; padding:24px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+<header><div><img src="assets/icon128.png" alt=""><a href="./">HubSpot Module Builder</a></div></header>
+<main>
+<h1>HubSpot Module Builder — Privacy Policy</h1>
+<p><em>Last updated: September 2026</em></p>
+<p>HubSpot Module Builder is a Chrome extension that lets you design HubSpot CMS custom modules on a visual canvas and export them as files. This policy explains what data the extension handles and where it goes. The short version: <strong>your designs stay on your computer, and we do not collect, sell or share your data.</strong></p>
+<h2>Data stored on your device</h2>
+<p>Everything below stays in your browser profile on your own computer and is never sent to us:</p>
+<ul>
+<li><strong>Your module design</strong> — the elements, fields and settings you build, autosaved so you can pick up where you left off (browser <code>localStorage</code>).</li>
+<li><strong>Your license record</strong> — if you activate a Pro license: the license key, the activation instance ID Lemon Squeezy returns, and the time it was last validated (browser <code>localStorage</code>).</li>
+<li><strong>Your export folder</strong> — if you use "Save to folder", a reference to the folder you chose so you are not asked every time (browser IndexedDB). The extension can only write to a folder you explicitly pick, and Chrome asks you to re-confirm access on later sessions. It writes the module files and checks whether a folder with the module's name already exists (so it can ask before replacing it); it does not read the contents of your files.</li>
+</ul>
+<p>You can remove all of this at any time by clearing the extension's site data in Chrome, or by using <strong>Deactivate this device</strong> for the license.</p>
+<h2>Data sent to third parties</h2>
+<p><strong>Lemon Squeezy (licensing).</strong> When you activate, validate or deactivate a Pro license, the license key and a device label (for example "HubSpot Module Builder (Windows)") are sent directly from your browser to Lemon Squeezy's license API to check that the key is valid. We do not receive, see or store your key or any payment information — purchases and licensing are handled entirely by Lemon Squeezy under <a href="https://www.lemonsqueezy.com/privacy">their privacy policy</a>. Free users never contact Lemon Squeezy.</p>
+<p><strong>Sample images and video (placehold.co, YouTube).</strong> Some built-in sections use sample content so they look realistic on the canvas: placeholder images are loaded from <code>placehold.co</code>, and one section includes a sample YouTube embed. These requests happen only when a section that uses them is on your canvas or preview, and they reveal your IP address to those services in the ordinary way any web request does. Replace the sample content with your own to avoid them.</p>
+<h2>What we do not do</h2>
+<ul>
+<li>We do not collect or log your browsing history, personal information, credentials, financial information, location or communications.</li>
+<li>We do not run analytics, telemetry, advertising or tracking of any kind.</li>
+<li>We do not sell or transfer your data to third parties, apart from the Lemon Squeezy license check described above.</li>
+<li>We do not use your data for anything unrelated to the extension's single purpose: designing and exporting HubSpot modules.</li>
+<li>The extension loads no remotely hosted code. All of its JavaScript ships inside the extension package.</li>
+</ul>
+<h2>Your exports</h2>
+<p>The module files you export (<code>module.html</code>, <code>fields.json</code>, <code>meta.json</code>, <code>module.css</code>, <code>module.js</code>) are generated on your computer and written only to the folder or ZIP you choose. Nothing is uploaded by the extension. Uploading to HubSpot is done by you (for example with the HubSpot CLI) and is governed by HubSpot's own terms.</p>
+<h2>Permissions</h2>
+<p>The extension requests <strong>no Chrome permissions</strong> and no host permissions. It opens its builder in a new tab, stores your design locally, and — only when you choose to — uses Chrome's folder picker to write files where you tell it to.</p>
+<h2>Changes to this policy</h2>
+<p>If this policy changes, the "Last updated" date above will be revised.</p>
+<h2>Contact</h2>
+<p>Questions about this policy: please use the support channel on the extension's Chrome Web Store listing.</p>
+<hr>
+<p><em>HubSpot Module Builder is an independent tool and is not affiliated with, endorsed by, or sponsored by HubSpot, Inc.</em></p>
+</main>
+<footer>HubSpot Module Builder is an independent tool and is not affiliated with, endorsed by, or sponsored by HubSpot, Inc. · <a href="./">Home</a></footer>
+</body>
+</html>
